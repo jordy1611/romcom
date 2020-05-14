@@ -31,5 +31,8 @@ This is a 6-day project. The estimated timeline is:
 Started project. Filled out DTR, created private slack channel, branched repo, cloned repo, initialized README initialized GitHub projects.
 
 5/13/2020
-Added document.querySelector variables, created window listening event for page load, created functionality to randomize cover on page load, created readme-images directory to store screenshot progressions.
+Completed Iteration 0: Added document.querySelector variables, created window listening event for page load, created functionality to randomize cover on page load, created readme-images directory to store screenshot progressions.
 ![screenshot of random cover on page load](/readme-images/iter0screenshot.png).
+
+Completed Iteration 1: Added doc.querySelector variable for show random button. On this variable, we attached an event listener that listened for "click" and ran randomizeCover function. We modified this function to instantiate a Cover object and added variables for readability.
+![screenshot of random cover on random button click](/readme-images/iteration1-screenshot.png).
