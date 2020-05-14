@@ -26,6 +26,8 @@ window.addEventListener('load', randomizeCover);
 showRandomButton.addEventListener('click', randomizeCover);
 makeNewCoverButton.addEventListener('click', showFormPage);
 viewSavedCoversButton.addEventListener('click', showSavedCoversPage);
+homeButton.addEventListener('click',showHomePage);
+
 // Create your event handlers and other functions here 👇
 
 
@@ -65,4 +67,14 @@ function showSavedCoversPage(event) {
   toggleDefault();
   formView.classList.add('hidden');
   savedCoversView.classList.remove('hidden');
+}
+
+function showHomePage(event) {
+  event.preventDefault();
+  homeView.classList.remove("hidden");
+  formView.classList.add('hidden');
+  savedCoversView.classList.add('hidden');
+  showRandomButton.classList.remove('hidden');
+  saveCoverButton.classList.remove('hidden');
+  homeButton.classList.add('hidden');
 }
