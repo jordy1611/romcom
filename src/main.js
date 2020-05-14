@@ -7,10 +7,15 @@ var showRandomButton = document.querySelector('.random-cover-button');
 var makeNewCoverButton = document.querySelector('.make-new-button');
 var saveCoverButton = document.querySelector('.save-cover-button');
 var viewSavedCoversButton = document.querySelector('.view-saved-button');
+var makeUserCoverButton = document.querySelector('.create-new-book-button');
 var homeButton = document.querySelector('.home-button');
 var homeView = document.querySelector('.home-view');
 var formView = document.querySelector('.form-view');
 var savedCoversView = document.querySelector('.saved-view');
+var userCoverImage = document.querySelector('.user-cover');
+var userTitle = document.querySelector('.user-title');
+var userTagLine1 = document.querySelector('.user-desc1');
+var userTagLine2 = document.querySelector('.user-desc2');
 
 // We've provided a few variables below
 var savedCovers = [
@@ -26,7 +31,8 @@ window.addEventListener('load', randomizeCover);
 showRandomButton.addEventListener('click', randomizeCover);
 makeNewCoverButton.addEventListener('click', showFormPage);
 viewSavedCoversButton.addEventListener('click', showSavedCoversPage);
-homeButton.addEventListener('click',showHomePage);
+homeButton.addEventListener('click', showHomePage);
+makeUserCoverButton.addEventListener('click', createCover);
 
 // Create your event handlers and other functions here 👇
 
@@ -77,4 +83,22 @@ function showHomePage(event) {
   showRandomButton.classList.remove('hidden');
   saveCoverButton.classList.remove('hidden');
   homeButton.classList.add('hidden');
+}
+
+function saveUserData() {
+  covers.push(userCoverImage.value);
+  titles.push(userTitle.value);
+  descriptors.push(userTagLine1.value);
+  descriptors.push(userTagLine2.value);
+}
+
+function createCover(event) {
+  event.preventDefault();
+  showHomePage(event);
+  saveUserData();
+  coverImage.src = userCoverImage.value;
+  coverTitle.innerText = userTitle.value;
+  coverTagLine1.innerText = userTagLine1.value;
+  coverTagLine2.innerText = userTagLine2.value;
+  currentCover = new Cover(userCoverImage.value, userTitle.value, userTagLine1.value, userTagLine2.value);
 }
