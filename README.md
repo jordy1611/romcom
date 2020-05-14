@@ -38,4 +38,6 @@ Completed Iteration 0: Added document.querySelector variables, created window li
 
 Completed Iteration 1: Added doc.querySelector variable for show random button. On this variable, we attached an event listener that listened for "click" and ran randomizeCover function. We modified this function to instantiate a Cover object and added variables for readability.
 
-
+5/14/2020:
+![gif of buttons changing views](/readme-images/it2.gif)
+*Switching views based on button click (Iteration 2)*
