@@ -44,3 +44,8 @@ Completed Iteration 2: We created functionality for the various buttons that tog
 
 ![gif of buttons changing views](/readme-images/it2.gif)
 *Switching views based on button click (Iteration 2)*
+
+Completed Iteration 3: Added functionality to the create cover inputs and button. User can now input image, title and 2 descriptors to generate custom cover. Adjusted code to update DOM and data model with user inputs.
+
+![gif of custom user cover on click](/readme-images/Explosive-passions1.gif)
+*Creating user custom cover using user inputs (Iteration 3)*
