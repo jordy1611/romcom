@@ -1,8 +1,9 @@
 // Create variables targetting the relevant DOM elements here 👇
-var coverImage = document.querySelector('.cover-image'); 
+var coverImage = document.querySelector('.cover-image');
 var coverTitle = document.querySelector('.cover-title');
 var coverTagLine1 = document.querySelector('.tagline-1');
 var coverTagLine2 = document.querySelector('.tagline-2');
+var showRandomButton = document.querySelector('.random-cover-button');
 
 // We've provided a few variables below
 var savedCovers = [
@@ -15,6 +16,7 @@ var currentCover;
 
 // Add your event listeners here 👇
 window.addEventListener('load', randomizeCover);
+showRandomButton.addEventListener('click', randomizeCover);
 
 // Create your event handlers and other functions here 👇
 
@@ -25,8 +27,13 @@ function getRandomIndex(array) {
 };
 
 function randomizeCover() {
-  coverImage.src = covers[getRandomIndex(covers)];
-  coverTitle.innerText = titles[getRandomIndex(titles)];
-  coverTagLine1.innerText = descriptors[getRandomIndex(descriptors)];
-  coverTagLine2.innerText = descriptors[getRandomIndex(descriptors)];
+  var randomCover = covers[getRandomIndex(covers)];
+  var randomTitle = titles[getRandomIndex(titles)];
+  var randomTagline1 = descriptors[getRandomIndex(descriptors)];
+  var randomTagline2 = descriptors[getRandomIndex(descriptors)];
+  coverImage.src = randomCover;
+  coverTitle.innerText = randomTitle;
+  coverTagLine1.innerText = randomTagline1;
+  coverTagLine2.innerText = randomTagline2;
+  currentCover = new Cover(randomCover, randomTitle, randomTagline1, randomTagline2);
 };
