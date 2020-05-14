@@ -29,3 +29,7 @@ This is a 6-day project. The estimated timeline is:
 
 5/12/2020
 Started project. Filled out DTR, created private slack channel, branched repo, cloned repo, initialized README initialized GitHub projects.
+
+5/13/2020
+Added document.querySelector variables, created window listening event for page load, created functionality to randomize cover on page load, created readme-images directory to store screenshot progressions.
+![screenshot of random cover on page load](/readme-images/iter0screenshot.png).
