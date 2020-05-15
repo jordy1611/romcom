@@ -49,3 +49,8 @@ Completed Iteration 3: Added functionality to the create cover inputs and button
 
 ![gif of custom user cover on click](/readme-images/Explosive-passions1.gif)
 *Creating user custom cover using user inputs (Iteration 3)*
+
+Completed Iteration 4: Added functionality to Save Cover button to save the currently displayed cover to the data model (savedCovers array) with duplication prevention. We then added a function called displaySavedCovers that displays the saved covers in the Saved Covers View. We enlisted help of Ryan Barnett for refactoring guidance. We tested the app several times to find bugs. We then considered additional code for form validation, but will implement that if we have time.
+
+![gif of saving and displaying saved covers](/readme-images/it4.gif)
+*Saving and displaying covers (Iteration 4)*
