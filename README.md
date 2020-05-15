@@ -1,19 +1,19 @@
 
-## RomCom
+# RomCom
 Mod 1 Pair-Project
-Leigh Larson: https://github.com/leighlars
-Jordy Shryock: https://github.com/jordy1611
+Leigh Larson: https://github.com/leighlars;
+Jordy Shryock: https://github.com/jordy1611;
 Instructor Scott Ertmer: https://github.com/sertmer
 
-# Objective
+## Objective
 
 In this paired project, we will write clean, DRY JavaScript to store our data; use a provided class by creating object instances using the `new` keyword; manipulate the page after it has loaded; add, remove, and update elements on the DOM; demonstrate understanding of event bubbling and use event delegation on dynamic elements, and begin to understand how to write effective, clean HTML & CSS.
 
-# Overview
+## Overview
 
 People say that romance novels are formulaic. Well ... maybe that's true. We're going to make an app that generates romance novel covers!
 
-# Planning
+## Planning
 This pair project will use Atom as a text editor, GitHub projects as the project management tool (https://github.com/users/jordy1611/projects/1), MDN and lesson plans as references, and the employment of mentors for code feedback, guidance, and the "rubber duck" code comprehension method.
 
 This is a 6-day project. The estimated timeline is:
@@ -26,7 +26,7 @@ This is a 6-day project. The estimated timeline is:
 * Monday: Iteration 5 completed
 * Tuesday: Extensions and Project Refinement
 
-# Progression
+## Progression
 
 **5/12/2020**
 Set-up project. Filled out DTR, created private slack channel, forked and cloned repo, initialized README, and initialized GitHub projects.
