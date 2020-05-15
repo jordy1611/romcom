@@ -33,6 +33,7 @@ makeNewCoverButton.addEventListener('click', showFormPage);
 viewSavedCoversButton.addEventListener('click', showSavedCoversPage);
 homeButton.addEventListener('click', showHomePage);
 makeUserCoverButton.addEventListener('click', createCover);
+saveCoverButton.addEventListener('click', saveCover);
 
 // Create your event handlers and other functions here 👇
 
@@ -101,4 +102,14 @@ function createCover(event) {
   coverTagLine1.innerText = userTagLine1.value;
   coverTagLine2.innerText = userTagLine2.value;
   currentCover = new Cover(userCoverImage.value, userTitle.value, userTagLine1.value, userTagLine2.value);
+}
+
+function saveCover(event) {
+  event.preventDefault();
+  for (var i = 0; i < savedCovers.length; i++) {
+    if (currentCover.id === savedCovers[i].id) {
+      return false;
+    }
+  }
+  return savedCovers.push(currentCover);
 }
