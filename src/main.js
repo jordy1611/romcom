@@ -16,6 +16,7 @@ var userCoverImage = document.querySelector('.user-cover');
 var userTitle = document.querySelector('.user-title');
 var userTagLine1 = document.querySelector('.user-desc1');
 var userTagLine2 = document.querySelector('.user-desc2');
+var savedCoversSection = document.querySelector('.saved-covers-section');
 
 // We've provided a few variables below
 var savedCovers = [
@@ -71,6 +72,8 @@ function showFormPage(event) {
 
 function showSavedCoversPage(event) {
   event.preventDefault();
+  savedCoversSection.innerHTML = "";
+  displaySavedCovers();
   toggleDefault();
   formView.classList.add('hidden');
   savedCoversView.classList.remove('hidden');
@@ -112,4 +115,16 @@ function saveCover(event) {
     }
   }
   return savedCovers.push(currentCover);
+}
+
+function displaySavedCovers() {
+  for (var i = 0; i < savedCovers.length; i++) {
+    var minicover = `
+      <div class= "mini-cover" dataset-id=${savedCovers[i].id}>
+      <img class="cover-image" src=${savedCovers[i].cover}>
+      <h2 class="cover-title">${savedCovers[i].title}</h2>
+      <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+      </div>`;
+    savedCoversSection.insertAdjacentHTML("afterbegin", minicover);
+  }
 }
