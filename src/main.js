@@ -1,4 +1,3 @@
-// Create variables targetting the relevant DOM elements here 👇
 var coverImage = document.querySelector('.cover-image');
 var coverTitle = document.querySelector('.cover-title');
 var coverTagLine1 = document.querySelector('.tagline-1');
@@ -18,16 +17,12 @@ var userTagLine1 = document.querySelector('.user-desc1');
 var userTagLine2 = document.querySelector('.user-desc2');
 var savedCoversSection = document.querySelector('.saved-covers-section');
 
-// We've provided a few variables below
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
 var currentCover;
-// Needs to call random picture, title and descriptors from precreated arrays...
-//Display
 
 
-// Add your event listeners here 👇
 window.addEventListener('load', randomizeCover);
 showRandomButton.addEventListener('click', randomizeCover);
 makeNewCoverButton.addEventListener('click', showFormPage);
@@ -36,10 +31,8 @@ homeButton.addEventListener('click', showHomePage);
 makeUserCoverButton.addEventListener('click', createCover);
 saveCoverButton.addEventListener('click', saveCover);
 savedCoversSection.addEventListener('dblclick', deleteCover);
-// Create your event handlers and other functions here 👇
 
 
-// We've provided one function to get you started
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 };
@@ -107,14 +100,20 @@ function createCover(event) {
   currentCover = new Cover(userCoverImage.value, userTitle.value, userTagLine1.value, userTagLine2.value);
 }
 
-function saveCover(event) {
-  event.preventDefault();
+function noDuplicates() {
   for (var i = 0; i < savedCovers.length; i++) {
-    if (currentCover.id === savedCovers[i].id) { //prevent duplication
+    if (currentCover.id === savedCovers[i].id) {
       return false;
     }
   }
-  return savedCovers.push(currentCover);
+  return true;
+}
+
+function saveCover(event) {
+  event.preventDefault();
+  if (noDuplicates()) {
+    savedCovers.push(currentCover);
+  }
 }
 
 function displaySavedCovers() {
