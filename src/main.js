@@ -35,7 +35,7 @@ viewSavedCoversButton.addEventListener('click', showSavedCoversPage);
 homeButton.addEventListener('click', showHomePage);
 makeUserCoverButton.addEventListener('click', createCover);
 saveCoverButton.addEventListener('click', saveCover);
-
+savedCoversSection.addEventListener('dblclick', deleteCover);
 // Create your event handlers and other functions here 👇
 
 
@@ -110,7 +110,7 @@ function createCover(event) {
 function saveCover(event) {
   event.preventDefault();
   for (var i = 0; i < savedCovers.length; i++) {
-    if (currentCover.id === savedCovers[i].id) {
+    if (currentCover.id === savedCovers[i].id) { //prevent duplication
       return false;
     }
   }
@@ -120,11 +120,24 @@ function saveCover(event) {
 function displaySavedCovers() {
   for (var i = 0; i < savedCovers.length; i++) {
     var minicover = `
-      <div class= "mini-cover" dataset-id=${savedCovers[i].id}>
+      <div class= "mini-cover" data-id=${savedCovers[i].id}>
       <img class="cover-image" src=${savedCovers[i].cover}>
       <h2 class="cover-title">${savedCovers[i].title}</h2>
       <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
       </div>`;
     savedCoversSection.insertAdjacentHTML("afterbegin", minicover);
+  }
+}
+
+function deleteCover(event) {
+  if (event.target.closest('.mini-cover')) {
+    var coverToDelete = event.target.closest('.mini-cover');
+    for (var i = 0; i < savedCovers.length; i++) {
+      if (coverToDelete.dataset.id == savedCovers[i].id) {
+        savedCovers.splice(i, 1);
+        savedCoversSection.innerHTML = '';
+        displaySavedCovers();
+      }
+    }
   }
 }
