@@ -56,7 +56,7 @@ Completed Iteration 4: Added functionality to Save Cover button to save the curr
 *Saving and displaying covers (Iteration 4)*
 
 **5/15/2020**
-Completed Iteration 5: Added functionality to delete saved covers. While in the saved covers view, a user can now double click a miniaturized image of the cover in order to delete that cover from the window and the date model. We created a function called deleteCover which identifies the saved cover by its id associated with Date.now() and removes it from the data set.
+Completed Iteration 5: Added functionality to delete saved covers. While in the saved covers view, a user can now double click a miniaturized image of the cover in order to delete that cover from the window and the data model. We created a function called deleteCover which identifies the saved cover by its id associated with Date.now() and removes it from the data set.
 
 ![gif of deleting saved covers](/readme-images/Deleting-gif.gif)
 *Deleting saved covers (Iteration 5)*
