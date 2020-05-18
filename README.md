@@ -60,3 +60,6 @@ Completed Iteration 5: Added functionality to delete saved covers. While in the 
 
 ![gif of deleting saved covers](/readme-images/Deleting-gif.gif)
 *Deleting saved covers (Iteration 5)*
+
+**5/18/2020**
+Significantly cleaned up code. Eliminated most of the global variables by either making the variables local (when only used once) inside their assigned functions or using functions to adhere to DRY and SRP guidelines. The displayElement and hideElement functions removed the need for most of the global variables and allowed the code to be easier to read.
