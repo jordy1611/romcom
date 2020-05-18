@@ -95,16 +95,16 @@ function createCover(event) {
   var userTagLine1 = document.querySelector('.user-desc1');
   var userTagLine2 = document.querySelector('.user-desc2');
   currentCover = new Cover(userCoverImage.value, userTitle.value, userTagLine1.value, userTagLine2.value);
-  saveUserData(cover);
+  saveUserData(currentCover);
   displayCover(currentCover);
   showHomePage();
 }
 
 function saveUserData(cover) {
-  covers.push(cover.cover);   //think our error is here
+  covers.push(cover.cover);
   titles.push(cover.title);
-  descriptors.push(cover.tagLine1);
-  descriptors.push(cover.tagLine2);
+  descriptors.push(cover.tagline1);
+  descriptors.push(cover.tagline2);
 }
 
 function saveCover() {
@@ -115,7 +115,7 @@ function saveCover() {
 
 function noDuplicates() {
   for (var i = 0; i < savedCovers.length; i++) {
-    if (currentCover.id === savedCovers[i].id) { // ==?
+    if (currentCover.id === savedCovers[i].id) {
       return false;
     }
   }
