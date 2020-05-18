@@ -44,7 +44,7 @@ function displayCover(cover) {
   var coverTitle = document.querySelector('.cover-title');
   var coverTagLine1 = document.querySelector('.tagline-1');
   var coverTagLine2 = document.querySelector('.tagline-2');
-  coverImage.src = cover.cover;  // turn into function?
+  coverImage.src = cover.cover;
   coverTitle.innerText = cover.title;
   coverTagLine1.innerText = cover.tagline1;
   coverTagLine2.innerText = cover.tagline2;
@@ -94,10 +94,12 @@ function createCover(event) {
   var userTitle = document.querySelector('.user-title');
   var userTagLine1 = document.querySelector('.user-desc1');
   var userTagLine2 = document.querySelector('.user-desc2');
+  var inputForm = document.querySelector('form');
   currentCover = new Cover(userCoverImage.value, userTitle.value, userTagLine1.value, userTagLine2.value);
   saveUserData(currentCover);
   displayCover(currentCover);
   showHomePage();
+  inputForm.reset();
 }
 
 function saveUserData(cover) {
@@ -138,7 +140,7 @@ function deleteCover(event) {
   if (event.target.closest('.mini-cover')) {
     var coverToDelete = event.target.closest('.mini-cover');
     for (var i = 0; i < savedCovers.length; i++) {
-      if (coverToDelete.dataset.id == savedCovers[i].id) {
+      if (Number(coverToDelete.dataset.id) === savedCovers[i].id) {
         savedCovers.splice(i, 1);
         savedCoversSection.innerHTML = '';
         displaySavedCovers();
