@@ -118,6 +118,7 @@ function saveCover() {
 function noDuplicates() {
   for (var i = 0; i < savedCovers.length; i++) {
     if (currentCover.id === savedCovers[i].id) {
+      alert("This cover was previously saved!");
       return false;
     }
   }
