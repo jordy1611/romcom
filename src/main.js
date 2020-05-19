@@ -138,14 +138,12 @@ function displaySavedCovers() {
 }
 
 function deleteCover(event) {
-  if (event.target.closest('.mini-cover')) {
-    var coverToDelete = event.target.closest('.mini-cover');
-    for (var i = 0; i < savedCovers.length; i++) {
-      if (Number(coverToDelete.dataset.id) === savedCovers[i].id) {
-        savedCovers.splice(i, 1);
-        savedCoversSection.innerHTML = '';
-        displaySavedCovers();
-      }
+  var coverToDelete = event.target.closest('.mini-cover');
+  for (var i = 0; i < savedCovers.length; i++) {
+    if (Number(coverToDelete.dataset.id) === savedCovers[i].id) {
+      savedCovers.splice(i, 1);
+      savedCoversSection.innerHTML = '';
+      displaySavedCovers();
     }
-  }
-}
+   }
+ }
